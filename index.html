@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viraj Patil | AI Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f8fbff;
+color:#111827;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:-200px;
+right:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#3b82f6 0%,transparent 70%);
+opacity:0.18;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+bottom:-250px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#06b6d4 0%,transparent 70%);
+opacity:0.12;
+z-index:-1;
+}
+
+.container{
+width:92%;
+max-width:1320px;
+margin:auto;
+}
+
+header{
+padding:25px 0;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 35px;
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,0.4);
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+background:linear-gradient(90deg,#2563eb,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+font-weight:600;
+color:#374151;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#2563eb;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:45px;
+align-items:center;
+padding:90px 0 70px;
+}
+
+.hero-left small{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+background:white;
+border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+font-weight:600;
+color:#2563eb;
+margin-bottom:28px;
+}
+
+.hero-left h1{
+font-size:88px;
+line-height:0.95;
+font-weight:900;
+margin-bottom:20px;
+background:linear-gradient(90deg,#111827,#2563eb,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-left h2{
+font-size:36px;
+font-weight:700;
+margin-bottom:28px;
+color:#111827;
+}
+
+.hero-left p{
+font-size:21px;
+line-height:1.9;
+color:#4b5563;
+max-width:760px;
+}
+
+.hero-actions{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+}
+
+.btn{
+padding:18px 30px;
+border-radius:16px;
+text-decoration:none;
+font-weight:700;
+display:inline-flex;
+align-items:center;
+gap:12px;
+transition:0.35s;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+color:white;
+box-shadow:0 18px 40px rgba(37,99,235,0.28);
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+}
+
+.btn-outline{
+background:white;
+color:#2563eb;
+border:2px solid #dbeafe;
+}
+
+.ai-card{
+background:rgba(255,255,255,0.72);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:34px;
+border:1px solid rgba(255,255,255,0.6);
+box-shadow:0 25px 50px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+.ai-card::before{
+content:'';
+position:absolute;
+top:-100px;
+right:-100px;
+width:250px;
+height:250px;
+background:radial-gradient(circle,#3b82f6 0%,transparent 70%);
+opacity:0.18;
+}
+
+.ai-card h3{
+font-size:30px;
+margin-bottom:30px;
+}
+
+.contact-box{
+display:flex;
+align-items:center;
+gap:18px;
+padding:18px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.contact-box:last-child{
+border:none;
+}
+
+.contact-box i{
+font-size:28px;
+color:#2563eb;
+width:45px;
+}
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+font-size:54px;
+font-weight:900;
+text-align:center;
+margin-bottom:65px;
+color:#111827;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+}
+
+.card{
+background:rgba(255,255,255,0.78);
+backdrop-filter:blur(18px);
+padding:38px;
+border-radius:28px;
+box-shadow:0 20px 45px rgba(0,0,0,0.06);
+position:relative;
+overflow:hidden;
+transition:0.35s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:6px;
+background:linear-gradient(90deg,#2563eb,#06b6d4);
+}
+
+.card i{
+font-size:56px;
+margin-bottom:25px;
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:18px;
+}
+
+.card p{
+font-size:17px;
+line-height:1.8;
+color:#4b5563;
+}
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:22px;
+}
+
+.tag{
+padding:10px 16px;
+background:#eff6ff;
+border-radius:999px;
+font-size:14px;
+font-weight:700;
+color:#2563eb;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:45px;
+border-radius:28px;
+color:white;
+text-align:center;
+box-shadow:0 20px 45px rgba(37,99,235,0.25);
+}
+
+.stat h2{
+font-size:64px;
+margin-bottom:10px;
+}
+
+.ai-banner{
+background:linear-gradient(135deg,#111827,#2563eb,#06b6d4);
+padding:70px;
+border-radius:36px;
+color:white;
+text-align:center;
+box-shadow:0 25px 60px rgba(0,0,0,0.18);
+position:relative;
+overflow:hidden;
+}
+
+.ai-banner::before{
+content:'';
+position:absolute;
+top:-100px;
+left:-100px;
+width:300px;
+height:300px;
+background:radial-gradient(circle,rgba(255,255,255,0.18) 0%,transparent 70%);
+}
+
+.ai-banner h2{
+font-size:52px;
+margin-bottom:22px;
+}
+
+.ai-banner p{
+font-size:20px;
+line-height:1.8;
+max-width:850px;
+margin:auto auto 35px;
+}
+
+footer{
+padding:45px 0;
+text-align:center;
+font-size:16px;
+color:#6b7280;
+}
+
+@media(max-width:980px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-left h1{
+font-size:62px;
+}
+
+.hero-left h2{
+font-size:28px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+
+<nav>
+
+<div class="logo">VP</div>
+
+<ul>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<div class="hero-left">
+
+<small>
+<i class="fas fa-sparkles"></i>
+AI Driven Portfolio Experience
+</small>
+
+<h1>Viraj Patil</h1>
+
+<h2>Sr Web Developer | Full Stack Developer</h2>
+
+<p>
+26+ years of experience building enterprise web platforms, financial systems, WordPress solutions, Shopify stores, API-driven applications, and scalable digital ecosystems with modern performance-first architecture.
+</p>
+
+<div class="hero-actions">
+
+<a href="https://github.com/virajpatil" class="btn btn-primary">
+<i class="fab fa-github"></i>
+GitHub
+</a>
+
+<a href="https://linkedin.com/in/virajpatil79" class="btn btn-outline">
+<i class="fab fa-linkedin"></i>
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+<div class="ai-card" id="contact">
+
+<h3>Professional Profile</h3>
+
+<div class="contact-box">
+<i class="fas fa-briefcase"></i>
+<div>
+<h4>Open To Work</h4>
+<p>Remote • Hybrid • Contract • Consulting</p>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fas fa-code"></i>
+<div>
+<h4>Core Expertise</h4>
+<p>WordPress • Shopify • PHP • APIs</p>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fas fa-location-dot"></i>
+<div>
+<h4>Location</h4>
+<p>Mumbai, India</p>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fas fa-layer-group"></i>
+<div>
+<h4>Industry Experience</h4>
+<p>Financial Platforms • CMS • eCommerce</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</header>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">AI Powered Tech Stack</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fab fa-wordpress"></i>
+<h3>WordPress Architecture</h3>
+<p>Enterprise WordPress systems, custom plugins, APIs, optimization, and scalable CMS solutions.</p>
+</div>
+
+<div class="card">
+<i class="fab fa-shopify"></i>
+<h3>Shopify Solutions</h3>
+<p>Modern Shopify storefronts, Liquid customization, API integrations, and performance tuning.</p>
+</div>
+
+<div class="card">
+<i class="fab fa-php"></i>
+<h3>PHP Engineering</h3>
+<p>Custom backend systems, API workflows, database architecture, and enterprise integrations.</p>
+</div>
+
+<div class="card">
+<i class="fab fa-js"></i>
+<h3>JavaScript Experience</h3>
+<p>Interactive interfaces, frontend integrations, dashboards, and dynamic application flows.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">What I Deliver</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-server"></i>
+<h3>API Integrations</h3>
+<p>REST APIs, financial synchronization systems, third-party integrations, and automation workflows.</p>
+
+<div class="tags">
+<span class="tag">REST API</span>
+<span class="tag">JSON</span>
+<span class="tag">Automation</span>
+</div>
+
+</div>
+
+<div class="card">
+<i class="fas fa-gauge-high"></i>
+<h3>Performance Optimization</h3>
+<p>Database tuning, caching strategies, PHP optimization, debugging, and scalable architecture improvements.</p>
+
+<div class="tags">
+<span class="tag">Caching</span>
+<span class="tag">Performance</span>
+<span class="tag">MySQL</span>
+</div>
+
+</div>
+
+<div class="card">
+<i class="fas fa-shield-halved"></i>
+<h3>Security & VAPT</h3>
+<p>Production support, vulnerability fixes, security remediation, and long-term maintenance support.</p>
+
+<div class="tags">
+<span class="tag">Security</span>
+<span class="tag">Support</span>
+<span class="tag">Debugging</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">Featured Experience</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-chart-line"></i>
+<h3>IPO Platforms</h3>
+
+<p>
+Built scalable IPO information systems with API synchronization, CMS workflows, responsive UI, and optimized backend architecture.
+</p>
+
+<div class="tags">
+<span class="tag">WordPress</span>
+<span class="tag">Financial</span>
+<span class="tag">API</span>
+</div>
+
+</div>
+
+<div class="card">
+<i class="fas fa-money-bill-trend-up"></i>
+<h3>Mutual Fund Platforms</h3>
+
+<p>
+Developed enterprise-level mutual fund platforms with real-time data handling, plugin enhancements, and optimized content delivery.
+</p>
+
+<div class="tags">
+<span class="tag">PHP</span>
+<span class="tag">MySQL</span>
+<span class="tag">Optimization</span>
+</div>
+
+</div>
+
+<div class="card">
+<i class="fas fa-cart-shopping"></i>
+<h3>Shopify Commerce</h3>
+
+<p>
+Created high-performance Shopify experiences with advanced integrations, responsive storefronts, and scalable architecture.
+</p>
+
+<div class="tags">
+<span class="tag">Shopify</span>
+<span class="tag">Liquid</span>
+<span class="tag">Frontend</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Professional Highlights</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>26+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h2>500+</h2>
+<p>Projects Delivered</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Clients Supported</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Production Support</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="ai-banner">
+
+<h2>Open To Work</h2>
+
+<p>
+Available for Full Stack Development, WordPress Architecture, Shopify Development, API integrations, optimization projects, and consulting opportunities worldwide.
+</p>
+
+<a href="https://linkedin.com/in/virajpatil79" class="btn btn-outline" style="background:white;color:#2563eb;border:none;">
+<i class="fab fa-linkedin"></i>
+Connect on LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+© 2026 Viraj Patil • AI Powered Portfolio Experience
+</div>
+</footer>
+
+</body>
+</html>
