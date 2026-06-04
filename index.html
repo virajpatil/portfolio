@@ -386,8 +386,54 @@ justify-content:center;
 }
 
 }
+/* PROJECT SLIDER */
 
+.project-slide{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 20px 45px rgba(0,0,0,0.08);
+}
+
+.project-slide img{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+.project-content{
+padding:32px;
+}
+
+.project-content h3{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.project-content p{
+color:#4b5563;
+}
+
+.swiper{
+padding-bottom:70px;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+background:white;
+width:55px;
+height:55px;
+border-radius:50%;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+color:#2563eb;
+}
+
+.swiper-pagination-bullet-active{
+background:#2563eb;
+}
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -574,37 +620,50 @@ LinkedIn
 </div>
 
 </section>
-
 <section id="projects">
 
 <div class="container">
 
-<h2 class="section-title">Featured Experience</h2>
+<h2 class="section-title">Featured Projects</h2>
 
-<div class="grid">
+<div class="swiper myProjects">
 
-<div class="card">
-<i class="fas fa-chart-line"></i>
-<h3>IPO Platforms</h3>
+<div class="swiper-wrapper">
+
+<!-- PROJECT 1 -->
+<div class="swiper-slide project-slide">
+
+<img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1400&auto=format&fit=crop" alt="IPO Platform">
+
+<div class="project-content">
+
+<h3>IPO Management Platform</h3>
 
 <p>
-Built scalable IPO information systems with API synchronization, CMS workflows, responsive UI, and optimized backend architecture.
+Developed scalable IPO information systems with API synchronization, CMS workflows, structured content architecture, and optimized publishing systems.
 </p>
 
 <div class="tags">
 <span class="tag">WordPress</span>
+<span class="tag">REST API</span>
 <span class="tag">Financial</span>
-<span class="tag">API</span>
 </div>
 
 </div>
 
-<div class="card">
-<i class="fas fa-money-bill-trend-up"></i>
-<h3>Mutual Fund Platforms</h3>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="swiper-slide project-slide">
+
+<img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1400&auto=format&fit=crop" alt="Mutual Fund">
+
+<div class="project-content">
+
+<h3>Mutual Fund Platform</h3>
 
 <p>
-Developed enterprise-level mutual fund platforms with real-time data handling, plugin enhancements, and optimized content delivery.
+Built enterprise-level mutual fund platforms with real-time integrations, backend optimization, and scalable content architecture.
 </p>
 
 <div class="tags">
@@ -615,12 +674,19 @@ Developed enterprise-level mutual fund platforms with real-time data handling, p
 
 </div>
 
-<div class="card">
-<i class="fas fa-cart-shopping"></i>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="swiper-slide project-slide">
+
+<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400&auto=format&fit=crop" alt="Shopify">
+
+<div class="project-content">
+
 <h3>Shopify Commerce</h3>
 
 <p>
-Created high-performance Shopify experiences with advanced integrations, responsive storefronts, and scalable architecture.
+Created modern Shopify experiences with advanced integrations, responsive storefronts, and scalable frontend architecture.
 </p>
 
 <div class="tags">
@@ -633,10 +699,40 @@ Created high-performance Shopify experiences with advanced integrations, respons
 
 </div>
 
+<!-- PROJECT 4 -->
+<div class="swiper-slide project-slide">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop" alt="Plugins">
+
+<div class="project-content">
+
+<h3>Enterprise WordPress Plugins</h3>
+
+<p>
+Built scalable WordPress plugins for API automation, backend workflows, admin panels, and enterprise CMS systems.
+</p>
+
+<div class="tags">
+<span class="tag">Plugins</span>
+<span class="tag">Automation</span>
+<span class="tag">CMS</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+
+</div>
+
 </div>
 
 </section>
-
 <section>
 
 <div class="container">
@@ -699,6 +795,49 @@ Connect on LinkedIn
 © 2026 Viraj Patil • AI Powered Portfolio Experience
 </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script>
+
+const swiper = new Swiper(".myProjects", {
+
+loop:true,
+
+spaceBetween:30,
+
+autoplay:{
+delay:3500,
+disableOnInteraction:false,
+},
+
+pagination:{
+el:".swiper-pagination",
+clickable:true,
+},
+
+navigation:{
+nextEl:".swiper-button-next",
+prevEl:".swiper-button-prev",
+},
+
+breakpoints:{
+
+0:{
+slidesPerView:1
+},
+
+768:{
+slidesPerView:2
+},
+
+1200:{
+slidesPerView:3
+}
+
+}
+
+});
+
+</script>
 </body>
 </html>
