@@ -432,6 +432,24 @@ color:#2563eb;
 .swiper-pagination-bullet-active{
 background:#2563eb;
 }
+
+.swiper-slide{
+height:auto !important;
+display:flex;
+}
+
+.swiper-wrapper{
+align-items:stretch;
+}
+
+.project-slide{
+height:100%;
+display:flex;
+flex-direction:column;
+}
+.swiper{
+overflow:visible;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -797,13 +815,19 @@ Connect on LinkedIn
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
+
+document.addEventListener("DOMContentLoaded", function () {
 
 const swiper = new Swiper(".myProjects", {
 
 loop:true,
 
 spaceBetween:30,
+
+slidesPerView:1,
 
 autoplay:{
 delay:3500,
@@ -822,10 +846,6 @@ prevEl:".swiper-button-prev",
 
 breakpoints:{
 
-0:{
-slidesPerView:1
-},
-
 768:{
 slidesPerView:2
 },
@@ -835,6 +855,8 @@ slidesPerView:3
 }
 
 }
+
+});
 
 });
 
