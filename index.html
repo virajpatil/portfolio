@@ -56,6 +56,10 @@ margin:auto;
 
 header{
 padding:25px 0;
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(18px);
 }
 
 nav{
@@ -547,7 +551,30 @@ LinkedIn
 
 </div>
 </header>
+<style>
+.stats-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
 
+.stats-grid img{
+width:100%;
+border-radius:24px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+background:white;
+padding:10px;
+}
+
+@media(max-width:980px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+</style>
 <section id="skills">
 
 <div class="container">
@@ -861,5 +888,56 @@ slidesPerView:3
 });
 
 </script>
+<div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
+<style>
+.bg-blur{
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+z-index:-1;
+opacity:.18;
+animation:float 8s infinite ease-in-out alternate;
+}
+
+.blur1{
+width:400px;
+height:400px;
+background:#3b82f6;
+top:-100px;
+right:-100px;
+}
+
+.blur2{
+width:400px;
+height:400px;
+background:#06b6d4;
+bottom:-100px;
+left:-100px;
+}
+
+@keyframes float{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(40px);
+}
+
+}
+.project-slide{
+overflow:hidden;
+}
+
+.project-slide img{
+transition:0.5s;
+}
+
+.project-slide:hover img{
+transform:scale(1.05);
+}
+</style>
 </body>
 </html>
