@@ -27,12 +27,49 @@ scroll-padding-top:120px;
 }
 
 body{
+
 font-family:'Inter',sans-serif;
-background:#07111f;
+
+background:
+radial-gradient(circle at top left,#2563eb33,transparent 30%),
+radial-gradient(circle at top right,#06b6d433,transparent 30%),
+radial-gradient(circle at bottom right,#9333ea33,transparent 35%),
+linear-gradient(
+135deg,
+#020617 0%,
+#071426 30%,
+#0f172a 60%,
+#111827 100%
+);
+
+background-attachment:fixed;
+
 color:#f8fafc;
+
 overflow-x:hidden;
+
 line-height:1.7;
+
 position:relative;
+
+}
+
+
+.parallax-grid{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+background-size:60px 60px;
+mask-image:radial-gradient(circle at center, black 30%, transparent 90%);
+z-index:-3;
+animation:gridMove 25s linear infinite;
+}
+
+@keyframes gridMove{
+from{transform:translateY(0);}
+to{transform:translateY(60px);}
 }
 
 /* PARALLAX BACKGROUND */
@@ -105,15 +142,29 @@ border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 nav{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:22px 36px;
-background:rgba(15,23,42,.72);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
-box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(30px);
+
+border:
+1px solid rgba(255,255,255,.10);
+
+border-radius:28px;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.35);
+
+position:sticky;
+top:20px;
+
 }
 
 .logo{
@@ -164,7 +215,7 @@ margin-bottom:30px;
 }
 
 .hero-left h1{
-font-size:96px;
+font-size:104px;
 line-height:.9;
 font-weight:900;
 margin-bottom:24px;
@@ -208,7 +259,9 @@ transition:.35s;
 .btn-primary{
 background:linear-gradient(135deg,#2563eb,#06b6d4,#9333ea);
 color:white;
-box-shadow:0 18px 40px rgba(59,130,246,.35);
+box-shadow:
+0 18px 40px rgba(59,130,246,.35),
+0 0 40px rgba(147,51,234,.18);
 }
 
 .btn-outline{
@@ -223,7 +276,12 @@ transform:translateY(-5px) scale(1.03);
 }
 
 .ai-card{
-background:rgba(15,23,42,.72);
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.10),
+rgba(255,255,255,.04)
+);
 backdrop-filter:blur(22px);
 padding:42px;
 border-radius:36px;
@@ -264,7 +322,7 @@ position:relative;
 }
 
 .section-title{
-font-size:60px;
+font-size:72px;
 font-weight:900;
 text-align:center;
 margin-bottom:70px;
@@ -281,7 +339,12 @@ align-items:stretch;
 }
 
 .card{
-background:rgba(15,23,42,.72);
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.10),
+rgba(255,255,255,.04)
+);
 backdrop-filter:blur(18px);
 padding:40px;
 border-radius:30px;
@@ -438,7 +501,12 @@ gap:25px;
 }
 
 .logo-box{
-background:rgba(15,23,42,.72);
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.10),
+rgba(255,255,255,.04)
+);
 padding:40px;
 border-radius:26px;
 text-align:center;
@@ -913,10 +981,39 @@ grid-template-columns:1fr;
 
 }
 
+
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#2563eb33,transparent 70%);
+pointer-events:none;
+top:var(--y);
+left:var(--x);
+transform:translate(-50%,-50%);
+z-index:-1;
+}
+
+
+.logo-box:hover,
+.stat:hover,
+.card:hover,
+.project-slide:hover{
+transform:
+translateY(-14px)
+scale(1.02);
+
+box-shadow:
+0 30px 70px rgba(37,99,235,.22),
+0 0 60px rgba(147,51,234,.15);
+}
+
 </style>
 </head>
 
 <body>
+<div class='parallax-grid'></div>
 
 <div class="parallax-bg">
 <div class="parallax-circle circle1"></div>
@@ -1248,7 +1345,7 @@ Built healthcare and fitness platforms focused on nutrition tracking, API integr
 
 <div class="container">
 
-<h2 class="section-title">18 Years Journey</h2>
+<h2 class="section-title">18+ Years Journey</h2>
 
 <div class="timeline">
 
@@ -1324,7 +1421,15 @@ Connect on LinkedIn
 </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+document.addEventListener('mousemove',e=>{
+
+document.body.style.setProperty('--x',e.clientX+'px');
+document.body.style.setProperty('--y',e.clientY+'px');
+
+});
+
+</script>
 
 <script>
 
@@ -1366,6 +1471,14 @@ slidesPerView:3
 }
 
 });
+
+});
+
+
+document.addEventListener('mousemove',e=>{
+
+document.body.style.setProperty('--x',e.clientX+'px');
+document.body.style.setProperty('--y',e.clientY+'px');
 
 });
 
