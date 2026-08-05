@@ -3580,7 +3580,116 @@ PROJECT VIEWER STATES
       .site-footer i {
         color: #f4f5fb !important;
       }
+
+      /*==================================================
+FOOTER RESPONSIVE
+==================================================*/
+
+      @media (max-width: 768px) {
+        .site-footer {
+          padding: 70px 0 40px;
+        }
+
+        .footer-grid {
+          display: flex;
+          flex-direction: column;
+          grid-template-columns:1fr;
+          gap: 45px;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr!important;
+        }
+        .footer-brand {
+          text-align: center;
+        }
+
+        .footer-brand .logo {
+          justify-content: center;
+        }
+
+        .footer-brand p {
+          max-width: 320px;
+          margin: 18px auto 0;
+        }
+
+        .footer-links {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 35px;
+        }
+
+        .footer-links h4 {
+          margin-bottom: 16px;
+          font-size: 18px;
+        }
+
+        .footer-links ul {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .footer-links a {
+          font-size: 15px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          gap: 16px;
+        }
+
+        .back-to-top {
+          right: 18px;
+          bottom: 18px;
+        }
+        .scroll-indicator {
+            display:none;
+      }
+
+      .about-bg,
+.projects-background,
+.trusted-section::before,
+.roadmap::before{
+    animation-play-state:paused;
+}
+
+.section-visible .about-bg,
+.section-visible .projects-background,
+.section-visible .trusted-section::before,
+.section-visible .roadmap::before{
+    animation-play-state:running;
+}
+
+.hero-photo,
+.tech-node,
+.metric-card,
+.trusted-card,
+.browser-card,
+.roadmap-card,
+.stats-card,
+.glass-card{
+
+    will-change:transform;
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
+}
     </style>
+    <script>
+    const sectionObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        entry.target.classList.toggle("section-visible",entry.isIntersecting);
+    });
+},{threshold:.15});
+
+document.querySelectorAll("section").forEach(section=>{
+    sectionObserver.observe(section);
+});    
+    </script>
   </head>
 
   <body>
@@ -3654,7 +3763,7 @@ Navigation
                 <!-- Resume -->
 
                 <a
-                  href="assets/resume/Viraj-Patil-Resume.pdf"
+                  href="Viraj-Patil-Resume.pdf"
                   class="btn btn-primary"
                   target="_blank"
                 >
@@ -3686,7 +3795,7 @@ Navigation
 
           <a href="#journey"> Journey </a>
 
-          <a href="#" class="btn btn-primary"> Download Resume </a>
+          <a href="Viraj_Patil_Resume.pdf"  target="_blank" "btn btn-primary"> Download Resume </a>
         </div>
       </header>
 
@@ -3984,7 +4093,7 @@ Milestone 3.1
                   <li>Technical Consulting</li>
                 </ul>
 
-                <a href="#" class="btn-outline"> Download Resume </a>
+                <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn-outline"> Download Resume </a>
               </div>
             </div>
 
@@ -5301,7 +5410,7 @@ FINAL CTA
                 LinkedIn
               </a>
 
-              <a href="resume.pdf" class="btn btn-outline">
+              <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn btn-outline">
                 <i class="fa-solid fa-download"></i>
 
                 Resume
@@ -5937,7 +6046,7 @@ Core Engine
 
             this.stars = [];
 
-            this.starCount = 300;
+            this.starCount = 270;
 
             this.orbitNodes = [];
 
