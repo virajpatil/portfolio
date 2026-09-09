@@ -5484,6 +5484,166 @@ FOOTER
 
                 Email
               </a>
+
+              <div class="footer-location-status">
+                <span class="location-pulse"></span>
+
+                <div class="location-content">
+                  <div class="location-main">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <strong>Mumbai, India</strong>
+                  </div>
+
+                  <div class="location-time">
+                    <span>IST</span>
+                    <span class="time-separator">•</span>
+                    <time id="localTime">--:-- --</time>
+                  </div>
+                </div>
+              </div>
+              <style>
+                /* ==========================================
+   LOCATION + LIVE IST STATUS
+========================================== */
+
+.footer-location-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 24px;
+  padding: 11px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.footer-location-status:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 12px 30px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Live indicator */
+
+.location-pulse {
+  position: relative;
+
+  width: 9px;
+  height: 9px;
+
+  flex: 0 0 9px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.12),
+    0 0 12px rgba(34, 197, 94, 0.55);
+}
+
+
+/* Location content */
+
+.location-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+/* Mumbai */
+
+.location-main {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.location-main i {
+  color: #60a5fa !important;
+  font-size: 13px;
+}
+
+.location-main strong {
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+
+/* Time */
+
+.location-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding-left: 20px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+
+.location-time span:first-child {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.time-separator {
+  opacity: 0.45;
+}
+
+#localTime {
+  font-variant-numeric: tabular-nums;
+  color: #cbd5e1;
+}  
+                
+              </style>
+              <script>
+                /* ==========================================
+   MUMBAI — LIVE IST CLOCK
+========================================== */
+
+function updateLocalTime() {
+  const timeElement = document.getElementById("localTime");
+
+  if (!timeElement) return;
+
+  const now = new Date();
+
+  const formattedTime = new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true
+  }).format(now);
+
+  timeElement.textContent = formattedTime;
+}
+
+updateLocalTime();
+
+setInterval(updateLocalTime, 30000);
+
+              </script>
             </div>
           </div>
 
