@@ -2325,6 +2325,25 @@ SIDEBAR
         transform: translateX(8px);
       }
 
+      /* Latest / Featured Project */
+      .project-nav-item[data-project="tabletap"] {
+        position: relative;
+      }
+
+      .project-nav-item[data-project="tabletap"]::after {
+        content: "LATEST";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(37, 99, 235, 0.1);
+        color: #28c840;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
       .project-nav-item.active {
         background: linear-gradient(135deg, #2563eb, #3b82f6);
 
@@ -2356,6 +2375,25 @@ SIDEBAR
       .project-nav-item.active .project-index {
         background: rgba(255, 255, 255, 0.18);
       }
+      /* TableTap brand mark — only the featured project index is changed */
+      .tabletap-project-logo {{
+        overflow: hidden;
+        padding: 7px;
+        background: #fff;
+        flex: 0 0 52px;
+      }}
+
+      .tabletap-project-logo img {{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }}
+
+      .project-nav-item.active .tabletap-project-logo {{
+        background: #fff;
+      }}
+
 
       /*=========================================
 BROWSER
@@ -3797,7 +3835,7 @@ Navigation
 
           <a href="#journey"> Journey </a>
 
-          <a href="Viraj_Patil_Resume.pdf"  target="_blank" "btn btn-primary"> Download Resume </a>
+          <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn btn-primary"> Download Resume </a>
         </div>
       </header>
 
@@ -4249,7 +4287,7 @@ ENTERPRISE SOLUTIONS
 
             <p>
               A selection of projects spanning financial services, healthcare,
-              eCommerce and modern web applications—each designed to solve real
+              eCommerce and modern web applications - each designed to solve real
               business challenges, improve user experiences and deliver
               measurable outcomes.
             </p>
@@ -4266,8 +4304,18 @@ ENTERPRISE SOLUTIONS
               <div class="sidebar-title">Featured Projects</div>
 
               <nav class="project-nav">
-                <button class="project-nav-item active" data-project="ipo">
-                  <span class="project-index"> 01 </span>
+                <button class="project-nav-item active" data-project="tabletap" aria-label="TableTap — Restaurant-Owned Commerce">
+                  <span class="project-index tabletap-project-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgdmlld0JveD0iMCAwIDUxMiA1MTIiCiAgICAgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiCiAgICAgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPlRhYmxlVGFwIG1vZGVybiBncmFkaWVudCBicmFuZCBtYXJrPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+VGFibGVUYXAgYm93bCBhbmQgbGVhZiBtYXJrIHdpdGggYSBzbW9vdGggb3JhbmdlLXJlZCBncmFkaWVudCBhbmQgZ3JlZW4gbGVhZiwgd2l0aG91dCB0aGUgcmVkIHRvbmd1ZSBkZXRhaWwuPC9kZXNjPgoKICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYm93bCIgeDE9IjglIiB5MT0iMTAlIiB4Mj0iOTIlIiB5Mj0iODglIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGODI0OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUyJSIgc3RvcC1jb2xvcj0iI0ZGNUE0MiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGMDQ0NTUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaW0iIHgxPSIxMiUiIHkxPSIxMiUiIHgyPSI5MiUiIHkyPSI4MiUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkY4QTRDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjRkY2MDQzIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0YwNDQ1NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxlYWYiIHgxPSIxNSUiIHkxPSIxMCUiIHgyPSI5MCUiIHkyPSI4OCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNkJDMDdEIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjNEU5NTZDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM0Nzg1RCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNvZnRIaWdobGlnaHQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIuMTYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iLjA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KCiAgPCEtLSBMZWFmIC0tPgogIDxwYXRoIGQ9Ik0yNzMgMTYxCiAgICAgICAgICAgQzI3MSAxMTIgMzAyIDU4IDM2OSAzMQogICAgICAgICAgIEMzNzAgODMgMzUwIDEzMCAzMTMgMTU3CiAgICAgICAgICAgQzI5NiAxNjkgMjgyIDE3MyAyNzIgMTY5CiAgICAgICAgICAgQzI3MSAxNjYgMjcxIDE2NCAyNzMgMTYxWiIKICAgICAgICBmaWxsPSJ1cmwoI2xlYWYpIi8+CgogIDwhLS0gQm93bCBzaWxob3VldHRlOiBvbmUgY29udGludW91cyBib2R5OyBubyBzZXBhcmF0ZSByZWQgdG9uZ3VlIC0tPgogIDxwYXRoIGQ9Ik05NiAyMTgKICAgICAgICAgICBDMTM3IDE4OCAxOTMgMTcxIDI1NiAxNzEKICAgICAgICAgICBDMzE5IDE3MSAzNzUgMTg4IDQxNiAyMTgKICAgICAgICAgICBDNDA4IDI3OSAzODIgMzMyIDM0MiAzNjYKICAgICAgICAgICBDMzE3IDM4NyAyODYgNDAwIDI1NiA0MDAKICAgICAgICAgICBDMjI2IDQwMCAxOTUgMzg3IDE3MCAzNjYKICAgICAgICAgICBDMTMwIDMzMiAxMDQgMjc5IDk2IDIxOFoiCiAgICAgICAgZmlsbD0idXJsKCNib3dsKSIvPgoKICA8IS0tIENsZWFuIHJpbSAtLT4KICA8cGF0aCBkPSJNOTYgMjE4CiAgICAgICAgICAgQzEzNyAxODggMTkzIDE3MSAyNTYgMTcxCiAgICAgICAgICAgQzMxOSAxNzEgMzc1IDE4OCA0MTYgMjE4CiAgICAgICAgICAgQzM3NiAyNDIgMzIwIDI1NCAyNTYgMjU0CiAgICAgICAgICAgQzE5MiAyNTQgMTM2IDI0MiA5NiAyMThaIgogICAgICAgIGZpbGw9InVybCgjcmltKSIvPgoKICA8IS0tIENyZWFtIHN1cmZhY2UgLS0+CiAgPHBhdGggZD0iTTEyNSAyMTgKICAgICAgICAgICBDMTYwIDE5OSAyMDUgMTkxIDI1NiAxOTEKICAgICAgICAgICBDMzA3IDE5MSAzNTIgMTk5IDM4NyAyMTgKICAgICAgICAgICBDMzUyIDIzNiAzMDcgMjQ1IDI1NiAyNDUKICAgICAgICAgICBDMjA1IDI0NSAxNjAgMjM2IDEyNSAyMThaIgogICAgICAgIGZpbGw9IiNGRkY4RUYiLz4KCiAgPCEtLSBWZXJ5IHN1YnRsZSBoaWdobGlnaHQgaW5zaWRlIHRoZSBzYW1lIGJvd2wgc2lsaG91ZXR0ZSAtLT4KICA8cGF0aCBkPSJNMTE5IDI1NAogICAgICAgICAgIEMxNTcgMjc1IDIwNSAyODYgMjU2IDI4NgogICAgICAgICAgIEMzMDcgMjg2IDM1NSAyNzUgMzkzIDI1NAogICAgICAgICAgIEMzODEgMjk5IDM2MSAzMzEgMzM1IDM1MQogICAgICAgICAgIEMzMTEgMzY5IDI4MyAzNzkgMjU2IDM3OQogICAgICAgICAgIEMyMjkgMzc5IDIwMSAzNjkgMTc3IDM1MQogICAgICAgICAgIEMxNTEgMzMxIDEzMSAyOTkgMTE5IDI1NFoiCiAgICAgICAgZmlsbD0idXJsKCNzb2Z0SGlnaGxpZ2h0KSIvPgoKICA8IS0tIE1pbmltYWwgc3RlbSBjb25uZWN0aW9uIC0tPgogIDxwYXRoIGQ9Ik0yNzEgMTczIEMyNzAgMTYwIDI3MiAxNDcgMjc2IDEzNiIKICAgICAgICBmaWxsPSJub25lIgogICAgICAgIHN0cm9rZT0iIzRDOTQ2QiIKICAgICAgICBzdHJva2Utd2lkdGg9IjgiCiAgICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=" alt="TableTap logo" /></span>
+
+                  <div>
+                    <h4>TableTap</h4>
+
+                    <small> Restaurant-Owned Commerce </small>
+                  </div>
+                </button>
+
+                <button class="project-nav-item" data-project="ipo">
+                  <span class="project-index"> 02 </span>
 
                   <div>
                     <h4>IPO Platform</h4>
@@ -4277,7 +4325,7 @@ ENTERPRISE SOLUTIONS
                 </button>
 
                 <button class="project-nav-item" data-project="mutual">
-                  <span class="project-index"> 02 </span>
+                  <span class="project-index"> 03 </span>
 
                   <div>
                     <h4>Mutual Funds</h4>
@@ -4287,7 +4335,7 @@ ENTERPRISE SOLUTIONS
                 </button>
 
                 <button class="project-nav-item" data-project="shopify">
-                  <span class="project-index"> 03 </span>
+                  <span class="project-index"> 04 </span>
 
                   <div>
                     <h4>Shopify Commerce</h4>
@@ -4297,7 +4345,7 @@ ENTERPRISE SOLUTIONS
                 </button>
 
                 <button class="project-nav-item" data-project="healthcare">
-                  <span class="project-index"> 04 </span>
+                  <span class="project-index"> 05 </span>
 
                   <div>
                     <h4>Healthcare</h4>
@@ -4307,7 +4355,7 @@ ENTERPRISE SOLUTIONS
                 </button>
 
                 <button class="project-nav-item" data-project="stockpulse">
-                  <span class="project-index"> 05 </span>
+                  <span class="project-index"> 06 </span>
 
                   <div>
                     <h4>StockPulse</h4>
@@ -4317,7 +4365,7 @@ ENTERPRISE SOLUTIONS
                 </button>
 
                 <button class="project-nav-item" data-project="tickerhq">
-                  <span class="project-index"> 06 </span>
+                  <span class="project-index"> 07 </span>
 
                   <div>
                     <h4>TickerHQ</h4>
@@ -6739,6 +6787,60 @@ PROJECT DATA
 ==================================================*/
 
       const PROJECTS = {
+        tabletap: {
+          type: "Restaurant-Owned Commerce · SaaS",
+
+          title: "TableTap — Restaurant-Owned Commerce",
+
+          url: "tabletap",
+
+          image:
+            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
+
+          description:
+            "Next-generation restaurant-owned commerce platform connecting discovery, Dine-in, Takeaway, Delivery, payments, loyalty, customer intelligence and repeat business in one restaurant-controlled digital experience.",
+
+          tech: [
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "REST API",
+            "AI-Assisted Development",
+            "SaaS Architecture",
+          ],
+
+          challenge:
+            "Restaurants own the customer relationship and repeat business — with menu, pricing, GST, cashback, loyalty, staff operations and orders connected in one unified commerce platform.",
+
+          solution:
+            "Built a shared commerce engine for customer storefront and restaurant POS-lite workflows, with mobile OTP authentication, role-based staff access, Dine-in/Takeaway/Delivery ordering, loyalty, coupons, GST-aware pricing, order workflows and an AI-ready foundation for restaurant intelligence.",
+
+          impact:
+            "Creates a direct restaurant-owned digital channel designed to increase customer retention, simplify operations and connect ordering data with loyalty and future predictive insights.",
+
+          architecture: `Customer Storefront
+│
+Shared Commerce Engine
+├── Menu & Pricing
+├── GST / Tax
+├── Loyalty
+├── Orders
+└── Customer Intelligence
+│
+Restaurant POS-lite
+├── Staff Roles
+├── Dine-in
+├── Takeaway
+└── Delivery`,
+
+          metrics: [
+            ["3", "Order Channels"],
+            ["1", "Shared Commerce Engine"],
+            ["OTP", "Customer Login"],
+            ["AI", "Ready Architecture"],
+          ],
+        },
+
         ipo: {
           type: "Enterprise WordPress Platform",
 
@@ -7025,7 +7127,7 @@ PROJECT VIEWER
 
           this.bind();
 
-          this.render("ipo");
+          this.render("tabletap");
         }
 
         cache() {
