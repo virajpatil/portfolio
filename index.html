@@ -23,56 +23,26 @@ viewport-fit=cover"
 
     <meta name="color-scheme" content="light" />
 
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
 
     <meta name="author" content="Viraj Patil" />
 
-    <meta
-      name="description"
-      content="Senior Full Stack Developer with 18+ Years Experience building Enterprise Web Applications, WordPress Architecture, Shopify Solutions, AI Powered Applications and Modern Product Experiences."
-    />
+    <meta name="description" content="Mumbai-based Senior Full Stack Developer with 18+ years of experience in PHP, WordPress, JavaScript, React.js, REST APIs and enterprise CMS delivery." />
 
-    <meta
-      name="keywords"
-      content="
-Viraj Patil,
-Senior Full Stack Developer,
-WordPress,
-Shopify,
-React,
-PHP,
-CSS,
-REST API,
-AI,
-Portfolio,
-Enterprise Development"
-    />
+    <title>Viraj Patil | Senior Full Stack Developer in Mumbai</title>
 
-    <title>Viraj Patil | Senior Full Stack Developer</title>
-
-    <!-- =============================
-Open Graph
-============================= -->
-
+    <!-- Open Graph: accurate previews when the portfolio is shared -->
     <meta property="og:type" content="website" />
-
-    <meta property="og:title" content="Viraj Patil" />
-
-    <meta property="og:description" content="Senior Full Stack Developer" />
-
-    <meta property="og:image" content="assets/images/og-image.webp" />
-
+    <meta property="og:site_name" content="Viraj Patil — Developer Portfolio" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Viraj Patil | Senior Full Stack Developer in Mumbai" />
+    <meta property="og:description" content="18+ years building PHP and WordPress websites, enterprise CMS solutions, JavaScript applications and REST API integrations." />
     <meta property="og:url" content="https://virajpatil.github.io/portfolio/" />
 
-    <!-- =============================
-Twitter
-============================= -->
-
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <meta name="twitter:title" content="Viraj Patil" />
-
-    <meta name="twitter:description" content="Senior Full Stack Developer" />
+    <!-- X / Twitter social preview -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Viraj Patil | Senior Full Stack Developer in Mumbai" />
+    <meta name="twitter:description" content="PHP, WordPress, JavaScript, React.js, REST APIs and enterprise CMS delivery." />
 
     <!-- =============================
 Fonts
@@ -107,8 +77,67 @@ No JavaScript
     </script>
 
     <link rel="canonical" href="https://virajpatil.github.io/portfolio/" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin />
 
-<link rel="shortcut icon" href="favicon.ico" />
+    <!-- Structured entity data: must remain consistent with visible page content. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://virajpatil.github.io/portfolio/#website",
+          "url": "https://virajpatil.github.io/portfolio/",
+          "name": "Viraj Patil — Developer Portfolio",
+          "inLanguage": "en-IN",
+          "publisher": { "@id": "https://virajpatil.github.io/portfolio/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://virajpatil.github.io/portfolio/#profile",
+          "url": "https://virajpatil.github.io/portfolio/",
+          "name": "Viraj Patil | Senior Full Stack Developer in Mumbai",
+          "isPartOf": { "@id": "https://virajpatil.github.io/portfolio/#website" },
+          "mainEntity": { "@id": "https://virajpatil.github.io/portfolio/#person" },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://virajpatil.github.io/portfolio/#person",
+          "name": "Viraj Patil",
+          "url": "https://virajpatil.github.io/portfolio/",
+          "image": "https://avatars.githubusercontent.com/u/749800?v=4",
+          "jobTitle": "Senior Full Stack Developer",
+          "description": "Mumbai-based Senior Full Stack Developer with 18+ years of experience in PHP, WordPress, JavaScript, React.js, REST APIs and enterprise CMS delivery.",
+          "email": "virajpatil79@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "knowsAbout": [
+            "WordPress development",
+            "Custom WordPress themes and plugins",
+            "PHP",
+            "JavaScript",
+            "React.js",
+            "MySQL",
+            "REST API integration",
+            "Enterprise content management systems",
+            "Drupal CMS",
+            "Website performance and Core Web Vitals",
+            "AI-assisted software development"
+          ],
+          "sameAs": [
+            "https://github.com/virajpatil",
+            "https://www.linkedin.com/in/virajpatil79/"
+          ]
+        }
+      ]
+    }
+    </script>
     <!-- ==========================================================
 CSS START
 ========================================================== -->
@@ -262,6 +291,26 @@ LINKS
         text-decoration: none;
 
         transition: var(--transition);
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 2000;
+        padding: 12px 18px;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #0f172a;
+        font-weight: 700;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
       }
 
       /*=========================================================
@@ -3738,6 +3787,8 @@ Application
 ========================================================== -->
 
     <div id="app">
+      <a class="skip-link" href="#main-content">Skip to main content</a>
+
       <!-- ==========================================
 Navigation
 ========================================== -->
@@ -3749,7 +3800,7 @@ Navigation
       <header id="siteHeader" class="header">
         <div class="nav-shell">
           <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Primary navigation">
               <!-- Logo -->
 
               <a href="#hero" class="logo">
@@ -3758,7 +3809,7 @@ Navigation
                 <div class="logo-text">
                   <strong> Viraj Patil </strong>
 
-                  <small> Senior Full Stack Developer </small>
+                  <small> PHP • WordPress • JavaScript </small>
                 </div>
               </a>
 
@@ -3794,7 +3845,7 @@ Navigation
                 <a
                   href="https://linkedin.com/in/virajpatil79"
                   class="nav-social"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
                   <i class="fa-brands fa-linkedin-in"></i>
@@ -3805,7 +3856,7 @@ Navigation
                 <a
                   href="Viraj_Patil_Resume.pdf"
                   class="btn btn-primary"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   Resume
 
@@ -3818,7 +3869,9 @@ Navigation
               <button
                 class="mobile-toggle"
                 id="mobileToggle"
-                aria-label="Open Menu"
+                aria-label="Open navigation menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
               >
                 <i class="fa-solid fa-bars"></i>
               </button>
@@ -3828,17 +3881,20 @@ Navigation
 
         <!-- Mobile Menu -->
 
-        <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
           <a href="#about"> About </a>
 
           <a href="#projects"> Projects </a>
 
           <a href="#journey"> Journey </a>
 
-          <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn btn-primary"> Download Resume </a>
-        </div>
+          <a href="#faq"> FAQs </a>
+
+          <a href="Viraj_Patil_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary"> Download Resume </a>
+        </nav>
       </header>
 
+      <main id="main-content">
       <!-- ==========================================
 Hero
 ========================================== -->
@@ -3889,17 +3945,15 @@ LEFT COLUMN
               </div>
 
               <h1>
-                <span class="gradient-text">
-                  Building Digital Products That
-                </span>
-
-                Create Business Value
+                <span class="gradient-text">Senior Full Stack Developer</span>
+                in Mumbai
               </h1>
 
               <p class="hero-description">
-                Designing and developing web platforms, Customer experiences and
-                Business applications that are fast, maintainable and built for
-                long-term growth.
+                I’m Viraj Patil, a Mumbai-based developer with 18+ years of
+                experience building PHP and WordPress websites, custom CMS
+                solutions, JavaScript and React.js applications, and REST API
+                integrations for business platforms.
               </p>
 
               <div class="hero-actions">
@@ -3929,9 +3983,11 @@ RIGHT COLUMN
 
                 <img
                   src="https://avatars.githubusercontent.com/u/749800?v=4"
-                  alt="Viraj Patil"
+                  alt="Viraj Patil, Senior Full Stack Developer based in Mumbai"
                   class="hero-photo"
-                  loading="lazy"
+                  width="280"
+                  height="280"
+                  fetchpriority="high"
                   decoding="async"
                 />
                 <div class="photo-overlay"></div>
@@ -4086,13 +4142,12 @@ Milestone 3.1
           <div class="section-header">
             <span class="section-tag"> ABOUT ME </span>
 
-            <h2>Developing Technology That Drives Business Growth</h2>
+            <h2>PHP, WordPress & Enterprise Web Development</h2>
 
             <p>
-              Every successful product starts with understanding the business
-              behind it. I partner with teams to design, build and continuously
-              improve digital experiences that are fast, reliable and built for
-              long-term success
+              Viraj Patil is a Mumbai-based Senior Full Stack Developer with
+              18+ years of experience delivering business websites, custom CMS
+              solutions, web applications and API-connected digital products.
             </p>
           </div>
 
@@ -4104,25 +4159,24 @@ Milestone 3.1
                 <h3>Solving Business Challenges Through Technology</h3>
 
                 <p>
-                  I create modern web applications, digital products and
-                  business platforms that combine thoughtful user experiences
-                  with reliable engineering. Every solution is designed to be
-                  secure, high-performing and easy to maintain as business needs
-                  evolve.
+                  My core strengths include PHP development, custom WordPress
+                  theme and plugin development, CMS customisation, MySQL,
+                  JavaScript, React.js and REST API integrations. I focus on
+                  secure, accessible, maintainable websites and applications
+                  that support real business workflows.
                 </p>
 
                 <p>
-                  Working with organizations across financial services,
-                  healthcare, retail and education has strengthened my ability
-                  to simplify complex technical challenges, integrate diverse
-                  systems and deliver solutions that align with both business
-                  objectives and user expectations.
+                  My project experience spans financial services, healthcare,
+                  retail, eCommerce and education. I have also worked with
+                  Drupal CMS, including 2014 projects for Condé Nast titles
+                  Vogue, GQ and Travel Magazine.
                 </p>
 
                 <ul class="expertise-list">
                   <li>Custom Web Applications</li>
 
-                  <li>WordPress & Shopify Solutions</li>
+                  <li>Custom WordPress Development</li>
 
                   <li>API & Third-Party Integrations</li>
 
@@ -4130,10 +4184,10 @@ Milestone 3.1
 
                   <li>Performance & Optimization</li>
 
-                  <li>Technical Consulting</li>
+                  <li>Enterprise CMS Delivery</li>
                 </ul>
 
-                <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn-outline"> Download Resume </a>
+                <a href="Viraj_Patil_Resume.pdf"  target="_blank" rel="noopener noreferrer" class="btn-outline"> Download Resume </a>
               </div>
             </div>
 
@@ -4303,7 +4357,7 @@ ENTERPRISE SOLUTIONS
             <aside class="enterprise-sidebar">
               <div class="sidebar-title">Featured Projects</div>
 
-              <nav class="project-nav">
+              <nav class="project-nav" aria-label="Featured project selection">
                 <button class="project-nav-item active" data-project="tabletap" aria-label="TableTap — Restaurant-Owned Commerce">
                   <span class="project-index tabletap-project-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgdmlld0JveD0iMCAwIDUxMiA1MTIiCiAgICAgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiCiAgICAgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPlRhYmxlVGFwIG1vZGVybiBncmFkaWVudCBicmFuZCBtYXJrPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+VGFibGVUYXAgYm93bCBhbmQgbGVhZiBtYXJrIHdpdGggYSBzbW9vdGggb3JhbmdlLXJlZCBncmFkaWVudCBhbmQgZ3JlZW4gbGVhZiwgd2l0aG91dCB0aGUgcmVkIHRvbmd1ZSBkZXRhaWwuPC9kZXNjPgoKICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYm93bCIgeDE9IjglIiB5MT0iMTAlIiB4Mj0iOTIlIiB5Mj0iODglIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGODI0OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUyJSIgc3RvcC1jb2xvcj0iI0ZGNUE0MiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGMDQ0NTUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaW0iIHgxPSIxMiUiIHkxPSIxMiUiIHgyPSI5MiUiIHkyPSI4MiUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkY4QTRDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjRkY2MDQzIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0YwNDQ1NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxlYWYiIHgxPSIxNSUiIHkxPSIxMCUiIHgyPSI5MCUiIHkyPSI4OCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNkJDMDdEIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjNEU5NTZDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM0Nzg1RCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNvZnRIaWdobGlnaHQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIuMTYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iLjA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KCiAgPCEtLSBMZWFmIC0tPgogIDxwYXRoIGQ9Ik0yNzMgMTYxCiAgICAgICAgICAgQzI3MSAxMTIgMzAyIDU4IDM2OSAzMQogICAgICAgICAgIEMzNzAgODMgMzUwIDEzMCAzMTMgMTU3CiAgICAgICAgICAgQzI5NiAxNjkgMjgyIDE3MyAyNzIgMTY5CiAgICAgICAgICAgQzI3MSAxNjYgMjcxIDE2NCAyNzMgMTYxWiIKICAgICAgICBmaWxsPSJ1cmwoI2xlYWYpIi8+CgogIDwhLS0gQm93bCBzaWxob3VldHRlOiBvbmUgY29udGludW91cyBib2R5OyBubyBzZXBhcmF0ZSByZWQgdG9uZ3VlIC0tPgogIDxwYXRoIGQ9Ik05NiAyMTgKICAgICAgICAgICBDMTM3IDE4OCAxOTMgMTcxIDI1NiAxNzEKICAgICAgICAgICBDMzE5IDE3MSAzNzUgMTg4IDQxNiAyMTgKICAgICAgICAgICBDNDA4IDI3OSAzODIgMzMyIDM0MiAzNjYKICAgICAgICAgICBDMzE3IDM4NyAyODYgNDAwIDI1NiA0MDAKICAgICAgICAgICBDMjI2IDQwMCAxOTUgMzg3IDE3MCAzNjYKICAgICAgICAgICBDMTMwIDMzMiAxMDQgMjc5IDk2IDIxOFoiCiAgICAgICAgZmlsbD0idXJsKCNib3dsKSIvPgoKICA8IS0tIENsZWFuIHJpbSAtLT4KICA8cGF0aCBkPSJNOTYgMjE4CiAgICAgICAgICAgQzEzNyAxODggMTkzIDE3MSAyNTYgMTcxCiAgICAgICAgICAgQzMxOSAxNzEgMzc1IDE4OCA0MTYgMjE4CiAgICAgICAgICAgQzM3NiAyNDIgMzIwIDI1NCAyNTYgMjU0CiAgICAgICAgICAgQzE5MiAyNTQgMTM2IDI0MiA5NiAyMThaIgogICAgICAgIGZpbGw9InVybCgjcmltKSIvPgoKICA8IS0tIENyZWFtIHN1cmZhY2UgLS0+CiAgPHBhdGggZD0iTTEyNSAyMTgKICAgICAgICAgICBDMTYwIDE5OSAyMDUgMTkxIDI1NiAxOTEKICAgICAgICAgICBDMzA3IDE5MSAzNTIgMTk5IDM4NyAyMTgKICAgICAgICAgICBDMzUyIDIzNiAzMDcgMjQ1IDI1NiAyNDUKICAgICAgICAgICBDMjA1IDI0NSAxNjAgMjM2IDEyNSAyMThaIgogICAgICAgIGZpbGw9IiNGRkY4RUYiLz4KCiAgPCEtLSBWZXJ5IHN1YnRsZSBoaWdobGlnaHQgaW5zaWRlIHRoZSBzYW1lIGJvd2wgc2lsaG91ZXR0ZSAtLT4KICA8cGF0aCBkPSJNMTE5IDI1NAogICAgICAgICAgIEMxNTcgMjc1IDIwNSAyODYgMjU2IDI4NgogICAgICAgICAgIEMzMDcgMjg2IDM1NSAyNzUgMzkzIDI1NAogICAgICAgICAgIEMzODEgMjk5IDM2MSAzMzEgMzM1IDM1MQogICAgICAgICAgIEMzMTEgMzY5IDI4MyAzNzkgMjU2IDM3OQogICAgICAgICAgIEMyMjkgMzc5IDIwMSAzNjkgMTc3IDM1MQogICAgICAgICAgIEMxNTEgMzMxIDEzMSAyOTkgMTE5IDI1NFoiCiAgICAgICAgZmlsbD0idXJsKCNzb2Z0SGlnaGxpZ2h0KSIvPgoKICA8IS0tIE1pbmltYWwgc3RlbSBjb25uZWN0aW9uIC0tPgogIDxwYXRoIGQ9Ik0yNzEgMTczIEMyNzAgMTYwIDI3MiAxNDcgMjc2IDEzNiIKICAgICAgICBmaWxsPSJub25lIgogICAgICAgIHN0cm9rZT0iIzRDOTQ2QiIKICAgICAgICBzdHJva2Utd2lkdGg9IjgiCiAgICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=" alt="TableTap logo" /></span>
 
@@ -4400,7 +4454,7 @@ ENTERPRISE SOLUTIONS
                   <img
                     id="projectImage"
                     src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1600&auto=format&fit=crop"
-                    alt="Project Preview"
+                    alt="IPO management platform project preview"
                     loading="lazy"
                     decoding="async"
                   />
@@ -4637,7 +4691,8 @@ CAREER ROADMAP
                     Delivered digital products across finance, healthcare and
                     commerce by modernizing platforms, integrating business
                     systems and improving performance, usability and long-term
-                    maintainability.
+                    maintainability. Earlier Drupal CMS project work in 2014
+                    included Condé Nast titles Vogue, GQ and Travel Magazine.
                   </p>
 
                   <div class="roadmap-tags">
@@ -5420,6 +5475,90 @@ Footer
 ========================================== -->
 
       <!-- ==========================================================
+ANSWER-READY FAQ
+========================================================== -->
+      <section id="faq" class="faq-section" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+            <h2 id="faq-title">About Viraj Patil</h2>
+            <p>Clear answers about professional experience, technologies, CMS work and location.</p>
+          </div>
+
+          <div class="faq-grid">
+            <article class="faq-item">
+              <h3>Who is Viraj Patil?</h3>
+              <p>Viraj Patil is a Mumbai-based Senior Full Stack Developer with 18+ years of experience in web development, PHP, WordPress, enterprise CMS delivery and API-connected applications.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>What technologies does Viraj Patil specialise in?</h3>
+              <p>His core technologies include PHP, WordPress, JavaScript, React.js, MySQL and REST APIs, with additional experience across enterprise CMS platforms, Shopify and AI-assisted development.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Does Viraj Patil have custom WordPress development experience?</h3>
+              <p>Yes. His portfolio highlights WordPress development, CMS customisation, custom theme and plugin work, API integrations, website performance and production delivery.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Does Viraj Patil have Drupal CMS experience?</h3>
+              <p>Yes. He worked on Drupal CMS projects in 2014 for Condé Nast titles Vogue, GQ and Travel Magazine.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Where is Viraj Patil based?</h3>
+              <p>Viraj Patil is based in Mumbai, Maharashtra, India. Professional enquiries can be made through the email and LinkedIn links on this portfolio.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>What kinds of digital projects has he worked on?</h3>
+              <p>Selected portfolio work includes restaurant-owned commerce, enterprise WordPress platforms, financial and investment experiences, healthcare platforms, eCommerce websites and React-based data dashboards.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .faq-section {
+          padding: 110px 0;
+          background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+        }
+
+        .faq-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px;
+        }
+
+        .faq-item {
+          padding: 28px;
+          background: #ffffff;
+          border: 1px solid var(--border);
+          border-radius: 22px;
+          box-shadow: var(--shadow-xs);
+        }
+
+        .faq-item h3 {
+          margin-bottom: 12px;
+          font-size: 1.2rem;
+          line-height: 1.35;
+        }
+
+        .faq-item p {
+          color: var(--muted);
+          font-size: 1rem;
+          line-height: 1.75;
+        }
+
+        @media (max-width: 768px) {
+          .faq-section { padding: 80px 0; }
+          .faq-grid { grid-template-columns: 1fr; }
+          .faq-item { padding: 24px; }
+        }
+      </style>
+
+      <!-- ==========================================================
 FINAL CTA
 ========================================================== -->
 
@@ -5435,9 +5574,10 @@ FINAL CTA
             <h2>Let's Build Something Amazing Together</h2>
 
             <p>
-              Open to Senior Full Stack Developer, WordPress Architect, Shopify
-              Development, Enterprise CMS, REST API Integration, AI-Assisted
-              Engineering and Technical Leadership roles.
+              Open to full-time Senior Full Stack Developer and WordPress
+              Development opportunities involving PHP, custom CMS solutions,
+              JavaScript, React.js, REST API integrations and enterprise website
+              delivery. Based in Mumbai, Maharashtra, India.
             </p>
 
             <div class="cta-actions">
@@ -5449,7 +5589,7 @@ FINAL CTA
 
               <a
                 href="https://linkedin.com/in/virajpatil79"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="btn btn-outline"
               >
                 <i class="fab fa-linkedin"></i>
@@ -5457,7 +5597,7 @@ FINAL CTA
                 LinkedIn
               </a>
 
-              <a href="Viraj_Patil_Resume.pdf"  target="_blank" class="btn btn-outline">
+              <a href="Viraj_Patil_Resume.pdf"  target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                 <i class="fa-solid fa-download"></i>
 
                 Resume
@@ -5466,6 +5606,7 @@ FINAL CTA
           </div>
         </div>
       </section>
+      </main>
 
       <!-- ==========================================================
 FOOTER
@@ -5479,12 +5620,12 @@ FOOTER
 
               <h3>Viraj Patil</h3>
 
-              <p>Senior Full Stack Developer</p>
+              <p>Senior Full Stack Developer | PHP | WordPress | JavaScript | React.js | REST APIs</p>
 
               <p class="footer-description">
-                Designing scalable enterprise platforms, AI-powered web
-                applications, WordPress architecture, REST API integrations and
-                modern digital experiences.
+                Mumbai-based web developer specialising in PHP, custom WordPress
+                development, enterprise CMS delivery, REST API integrations,
+                JavaScript applications and AI-assisted development workflows.
               </p>
             </div>
 
@@ -5501,15 +5642,15 @@ FOOTER
             <div class="footer-links">
               <h4>Services</h4>
 
-              <a>WordPress</a>
+              <a href="#projects">WordPress Development</a>
 
-              <a>Shopify</a>
+              <a href="#projects">Shopify Development</a>
 
-              <a>REST APIs</a>
+              <a href="#projects">REST API Integrations</a>
 
-              <a>Performance</a>
+              <a href="#about">Performance Optimisation</a>
 
-              <a>AI Engineering</a>
+              <a href="#journey">AI-Assisted Development</a>
             </div>
 
             <div class="footer-links">
@@ -5539,7 +5680,7 @@ FOOTER
                 <div class="location-content">
                   <div class="location-main">
                     <i class="fa-solid fa-location-dot"></i>
-                    <strong>Mumbai, India</strong>
+                    <strong>Mumbai, Maharashtra, India</strong>
                   </div>
 
                   <div class="location-time">
@@ -6199,7 +6340,8 @@ Mobile Menu
 =====================================*/
 
         mobileToggle.addEventListener("click", () => {
-          mobileMenu.classList.toggle("show");
+          const isExpanded = mobileMenu.classList.toggle("show");
+          mobileToggle.setAttribute("aria-expanded", String(isExpanded));
         });
 
         /*=====================================
@@ -6219,6 +6361,7 @@ Smooth Scroll
             });
 
             mobileMenu.classList.remove("show");
+            mobileToggle.setAttribute("aria-expanded", "false");
           });
         });
 
